@@ -1,14 +1,14 @@
 ﻿// ==UserScript==
 // @name        	Mr.Leo 
-// @namespace   	http://userscripts.org:8080/scripts/edit_src/175449
+// @namespace   	https://raw.githubusercontent.com/MrLeo/Leo.UserScript/master/Mr.Leo.js
 // @description 	userscript for mr. leo
 // @match       	*
 // @include     	*
 // @require     	http://code.jquery.com/jquery-latest.js
-// @require			http://jeromeetienne.github.io/jquery-qrcode/src/jquery.qrcode.js
-// @require			http://jeromeetienne.github.io/jquery-qrcode/src/qrcode.js
-// @updateURL		http://userscripts.org:8080/scripts/source/175449.user.js
-// @downloadURL		http://userscripts.org:8080/scripts/source/175449.user.js
+// @require		http://jeromeetienne.github.io/jquery-qrcode/src/jquery.qrcode.js
+// @require		http://jeromeetienne.github.io/jquery-qrcode/src/qrcode.js
+// @updateURL		https://raw.githubusercontent.com/MrLeo/Leo.UserScript/master/Mr.Leo.js
+// @downloadURL		https://raw.githubusercontent.com/MrLeo/Leo.UserScript/master/Mr.Leo.js
 // @version      	0.1
 // ==/UserScript==
 //http://userscripts.org:8080/scripts/edit_src/175449
