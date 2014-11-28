@@ -7,9 +7,9 @@
 // @match           http://fd.yyets.tk/*
 // @include         http://www.yyets.com/*
 // @include         http://fd.yyets.tk/*
+// @updateURL       https://github.com/MrLeo/Leo.UserScript/blob/master/人人影视.user.js
+// @downloadURL     https://github.com/MrLeo/Leo.UserScript/blob/master/人人影视.user.js
 // ==/UserScript==
-// @updateURL       
-// @downloadURL     
 
 //根据传入的URL，在head里生成script引用DOM对象
 function createScriptLink(url) {
