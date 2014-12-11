@@ -5,9 +5,9 @@
 // @description  	QQ邮箱边栏改造
 // @updateURL		https://raw.githubusercontent.com/MrLeo/Leo.UserScript/master/QQ邮箱改造.js
 // @downloadURL		https://raw.githubusercontent.com/MrLeo/Leo.UserScript/master/QQ邮箱改造.js
-// @match		https://mail.qq.com/cgi-bin/frame_html*
+// @match		    https://mail.qq.com/cgi-bin/frame_html*
 // @include 		https://mail.qq.com/cgi-bin/frame_html*
-// @require		http://code.jquery.com/jquery-1.9.0.min.js
+// @require		    http://code.jquery.com/jquery-1.9.0.min.js
 // @copyright		2012+, You
 // ==/UserScript==
 //http://userscripts.org/scripts/edit_src/178748

@@ -3,12 +3,15 @@
 // @description     人人影视地址选择助手
 // @namespace       http://use.i.E.your.homepage/
 // @version         0.1
-// @match           http://www.yyets.com/*
-// @match           http://fd.yyets.tk/*
-// @include         http://www.yyets.com/*
-// @include         http://fd.yyets.tk/*
 // @updateURL       https://github.com/MrLeo/Leo.UserScript/blob/master/人人影视.user.js
 // @downloadURL     https://github.com/MrLeo/Leo.UserScript/blob/master/人人影视.user.js
+// @match           http://www.yyets.com/*
+// @match           http://fd.yyets.tk/*
+// @match           http://www.rrys.tv/*
+// @include         http://www.yyets.com/*
+// @include         http://fd.yyets.tk/*
+// @include         http://www.rrys.tv/*
+// @require     	http://code.jquery.com/jquery-latest.js
 // ==/UserScript==
 
 //根据传入的URL，在head里生成script引用DOM对象

@@ -3,12 +3,12 @@
 // @description 	喜马拉雅专辑列表浏览记录添加Cookie记录
 // @namespace   	http://use.i.E.your.homepage/
 // @version      	0.1
+// @updateURL       https://github.com/MrLeo/Leo.UserScript/blob/master/喜马拉雅.user.js
+// @downloadURL     https://github.com/MrLeo/Leo.UserScript/blob/master/喜马拉雅.user.js
 // @match       	http://www.ximalaya.com/*
 // @include     	http://www.ximalaya.com/*
 // @require     	http://code.jquery.com/jquery-latest.js
 // @require			http://raw.githubusercontent.com/carhartl/jquery-cookie/master/src/jquery.cookie.js
-// @updateURL       https://github.com/MrLeo/Leo.UserScript/blob/master/喜马拉雅.user.js
-// @downloadURL     https://github.com/MrLeo/Leo.UserScript/blob/master/喜马拉雅.user.js
 // ==/UserScript==
 
 //根据传入的URL，在head里生成script引用DOM对象
