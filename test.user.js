@@ -1,4 +1,4 @@
-// ==UserScript==
+ï»¿// ==UserScript==
 // @name            MyUserScript
 // @namespace       http://use.i.E.your.homepage/
 // @description     userscript for mr.leo
@@ -11,15 +11,15 @@
 // @require         http://code.jquery.com/jquery-latest.js
 // ==/UserScript==
 
-//¸ù¾İ´«ÈëµÄURL£¬ÔÚheadÀïÉú³ÉscriptÒıÓÃDOM¶ÔÏó
+//æ ¹æ®ä¼ å…¥çš„URLï¼Œåœ¨headé‡Œç”Ÿæˆscriptå¼•ç”¨DOMå¯¹è±¡
 function createScriptLink(url) {
     var scriptElement = document.createElement('script');
     scriptElement.setAttribute('type', 'text/javascript');
     scriptElement.setAttribute('src', url);
     document.head.appendChild(scriptElement);
-    console.log('Ìí¼ÓÒıÓÃ£º' + (new XMLSerializer()).serializeToString(scriptElement));
+    console.log('æ·»åŠ å¼•ç”¨ï¼š' + (new XMLSerializer()).serializeToString(scriptElement));
 }
-//ÔÚheadÒıÈëJQuery
+//åœ¨headå¼•å…¥JQuery
 ; (function () {
     //if (typeof jQuery == 'undefined') createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js');
     window.jQuery || createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')

@@ -1,25 +1,25 @@
-// ==UserScript==
-// @name        	Ï²ÂíÀ­ÑÅ
-// @description 	Ï²ÂíÀ­ÑÅ×¨¼­ÁĞ±íä¯ÀÀ¼ÇÂ¼Ìí¼ÓCookie¼ÇÂ¼
+ï»¿// ==UserScript==
+// @name        	å–œé©¬æ‹‰é›…
+// @description 	å–œé©¬æ‹‰é›…ä¸“è¾‘åˆ—è¡¨æµè§ˆè®°å½•æ·»åŠ Cookieè®°å½•
 // @namespace   	http://use.i.E.your.homepage/
 // @version      	0.1
-// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/Ï²ÂíÀ­ÑÅ.user.js
-// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/Ï²ÂíÀ­ÑÅ.user.js
+// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/å–œé©¬æ‹‰é›….user.js
+// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/å–œé©¬æ‹‰é›….user.js
 // @match       	http://www.ximalaya.com/*
 // @include     	http://www.ximalaya.com/*
 // @require     	http://code.jquery.com/jquery-latest.js
 // @require			http://raw.githubusercontent.com/carhartl/jquery-cookie/master/src/jquery.cookie.js
 // ==/UserScript==
 
-//¸ù¾İ´«ÈëµÄURL£¬ÔÚheadÀïÉú³ÉscriptÒıÓÃDOM¶ÔÏó
+//æ ¹æ®ä¼ å…¥çš„URLï¼Œåœ¨headé‡Œç”Ÿæˆscriptå¼•ç”¨DOMå¯¹è±¡
 function createScriptLink(url) {
     var scriptElement = document.createElement('script');
     scriptElement.setAttribute('type', 'text/javascript');
     scriptElement.setAttribute('src', url);
     document.head.appendChild(scriptElement);
-    console.log('Ìí¼ÓÒıÓÃ£º' + (new XMLSerializer()).serializeToString(scriptElement));
+    console.log('æ·»åŠ å¼•ç”¨ï¼š' + (new XMLSerializer()).serializeToString(scriptElement));
 }
-//ÔÚheadÒıÈëJQuery
+//åœ¨headå¼•å…¥JQuery
 ; (function () {
     //window.jQuery || createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
     if (typeof jQuery == 'undefined') createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js');
@@ -28,48 +28,48 @@ function createScriptLink(url) {
 //*******************************************************************************************************************//
 
 $(function () {
-    //»ñÈ¡urlÖĞµÄÒôÆµÖ÷Ò³id
+    //è·å–urlä¸­çš„éŸ³é¢‘ä¸»é¡µid
     //url = location.href;
     //key = url.replace(/http:.*#?\/(\d+)\/.*/gmi,'$1');
     key = location.href;
-    console.log("Ö¸¶¨CookieµÄKey£º" + key);
+    console.log("æŒ‡å®šCookieçš„Keyï¼š" + key);
 
-    //»ñÈ¡ Cookie
+    //è·å– Cookie
     var sound = $.cookie(key);
 
-    //Ò³Ãæ³õÊ¼»¯£¬Îª×¨¼­ÉèÖÃºìÉ«±ß¿ò
+    //é¡µé¢åˆå§‹åŒ–ï¼Œä¸ºä¸“è¾‘è®¾ç½®çº¢è‰²è¾¹æ¡†
     $album = $('.album_soundlist');
     $album.find('li[sound_id=' + sound + ']').addClass('focus').css('border', '1px solid red');
 
-    //×¨¼­
+    //ä¸“è¾‘
     var AlbumFunc = function () {
-        //ÖØĞÂ»ñÈ¡×¨¼­
+        //é‡æ–°è·å–ä¸“è¾‘
         $album = $('.album_soundlist');
         if ($album.length > 0) {
             key = location.href;
-            sound = $.cookie(key);//¸ù¾İCookie¼ü»ñÈ¡Öµ
-            console.log("¸ù¾İCookieµÄ¼ü£º" + key + "£¬»ñÈ¡ÖµSoundID£º" + sound);
-            var sound_id = parseInt($album.find('li[class="focus"]').attr('sound_id'));//»ñÈ¡µ±Ç°Ò³ÃæÖĞ±»¼¤»îµÄÒôÆµ
-            console.log("µ±Ç°Ò³Ãæ±»¼¤»îµÄSoundID£º" + sound_id);
+            sound = $.cookie(key);//æ ¹æ®Cookieé”®è·å–å€¼
+            console.log("æ ¹æ®Cookieçš„é”®ï¼š" + key + "ï¼Œè·å–å€¼SoundIDï¼š" + sound);
+            var sound_id = parseInt($album.find('li[class="focus"]').attr('sound_id'));//è·å–å½“å‰é¡µé¢ä¸­è¢«æ¿€æ´»çš„éŸ³é¢‘
+            console.log("å½“å‰é¡µé¢è¢«æ¿€æ´»çš„SoundIDï¼š" + sound_id);
             if (typeof sound != "undefined") {
                 if (!isNaN(sound_id)) {
                     $album.find('li[sound_id!=' + sound_id + ']').css('border', '0');
                     $album.find('li[sound_id=' + sound_id + ']').css('border', '1px solid red');
                     $.cookie(key, sound_id, { expires: 30 });
-                    console.log("ÉèÖÃCookie£¬Key£º" + key + ",Value£º" + sound_id);
+                    console.log("è®¾ç½®Cookieï¼ŒKeyï¼š" + key + ",Valueï¼š" + sound_id);
                 } else {
                     $album.find('li[sound_id=' + sound + ']').addClass('focus').css('border', '1px solid red');
                 }
             } else {
                 if (!isNaN(sound_id)) {
                     $.cookie(key, sound_id, { expires: 30 });
-                    console.log("³õ´ÎÉèÖÃCookie£¬Key£º" + key + ",Value£º" + sound_id);
+                    console.log("åˆæ¬¡è®¾ç½®Cookieï¼ŒKeyï¼š" + key + ",Valueï¼š" + sound_id);
                 }
             }
         }
     };
 
-    //¶¨Ê±Ñ­»·
+    //å®šæ—¶å¾ªç¯
     setInterval(function soundCookie() {
         AlbumFunc();
     }, 1000);

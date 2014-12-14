@@ -1,10 +1,10 @@
-// ==UserScript==
-// @name            ÈËÈËÓ°ÊÓ
-// @description     ÈËÈËÓ°ÊÓµØÖ·Ñ¡ÔñÖúÊÖ
+ï»¿// ==UserScript==
+// @name            äººäººå½±è§†
+// @description     äººäººå½±è§†åœ°å€é€‰æ‹©åŠ©æ‰‹
 // @namespace       http://use.i.E.your.homepage/
 // @version         0.1
-// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/ÈËÈËÓ°ÊÓ.user.js
-// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/ÈËÈËÓ°ÊÓ.user.js
+// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/äººäººå½±è§†.user.js
+// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/äººäººå½±è§†.user.js
 // @match           http://www.yyets.com/*
 // @match           http://fd.yyets.tk/*
 // @match           http://www.rrys.tv/*
@@ -14,25 +14,25 @@
 // @require     	http://code.jquery.com/jquery-latest.js
 // ==/UserScript==
 
-//¸ù¾İ´«ÈëµÄURL£¬ÔÚheadÀïÉú³ÉscriptÒıÓÃDOM¶ÔÏó
+//æ ¹æ®ä¼ å…¥çš„URLï¼Œåœ¨headé‡Œç”Ÿæˆscriptå¼•ç”¨DOMå¯¹è±¡
 function createScriptLink(url) {
     var scriptElement = document.createElement('script');
     scriptElement.setAttribute('type', 'text/javascript');
     scriptElement.setAttribute('src', url);
     document.head.appendChild(scriptElement);
-    console.log('Ìí¼ÓÒıÓÃ£º' + (new XMLSerializer()).serializeToString(scriptElement));
+    console.log('æ·»åŠ å¼•ç”¨ï¼š' + (new XMLSerializer()).serializeToString(scriptElement));
 }
-//ÔÚheadÒıÈëJQuery
+//åœ¨headå¼•å…¥JQuery
 ; (function () {
     //window.jQuery || createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
     if (typeof jQuery == 'undefined') createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js');
 })();
 
 $(function () {
-    console.log("================ ÈËÈËÓ°ÊÓ : " + location.href + " ================");
+    console.log("================ äººäººå½±è§† : " + location.href + " ================");
     var $strong = $('div.item_output').find('div').eq(1).find('strong');
-    $strong.after('<a href="javascript:void(0);" id="getThunderUrls">[»ñÈ¡Ñ¸À×µØÖ·]</a>');
-    $strong.after('<a href="javascript:void(0);" id="getMagnetUrls">[»ñÈ¡´ÅÁ¦Á´½Ó]</a>');
+    $strong.after('<a href="javascript:void(0);" id="getThunderUrls">[è·å–è¿…é›·åœ°å€]</a>');
+    $strong.after('<a href="javascript:void(0);" id="getMagnetUrls">[è·å–ç£åŠ›é“¾æ¥]</a>');
     var herfs = "";
     var vselectSeason = "";
     $('#getThunderUrls').on('click', function () {
@@ -48,7 +48,7 @@ $(function () {
             console.log(href);
             herfs += href + "\r\n";
         });
-        console.log("URLsÆ´½ÓÍê³É", herfs);
+        console.log("URLsæ‹¼æ¥å®Œæˆ", herfs);
 
         showUrls(herfs);
     });
@@ -67,7 +67,7 @@ $(function () {
             console.log(href);
             herfs += href + "\r\n";
         });
-        console.log("URLsÆ´½ÓÍê³É", herfs);
+        console.log("URLsæ‹¼æ¥å®Œæˆ", herfs);
 
         showUrls(herfs);
     });
@@ -83,7 +83,7 @@ $(function () {
     };
     var showUrls = function (herfs) {
         $('#urls textarea').html("").remove();
-        $('#tabs').after('<div id="urls"><div class="close">¹Ø±Õ</div><textarea style="width:99.5%;height:100%;margin:0 auto;" onpropertychange="this.style.posHeight=this.scrollHeight" onfocus="this.style.posHeight=this.scrollHeight">' + herfs + '</textarea></div>');
+        $('#tabs').after('<div id="urls"><div class="close">å…³é—­</div><textarea style="width:99.5%;height:100%;margin:0 auto;" onpropertychange="this.style.posHeight=this.scrollHeight" onfocus="this.style.posHeight=this.scrollHeight">' + herfs + '</textarea></div>');
         $('#urls').css({
             'position': 'fixed',
             'bottom': '0',
