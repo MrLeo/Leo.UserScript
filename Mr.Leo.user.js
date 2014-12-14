@@ -5,8 +5,8 @@
 // @match       	*
 // @include     	*
 // @require     	http://code.jquery.com/jquery-latest.js
-// @require		http://jeromeetienne.github.io/jquery-qrcode/src/jquery.qrcode.js
-// @require		http://jeromeetienne.github.io/jquery-qrcode/src/qrcode.js
+// @require		    http://jeromeetienne.github.io/jquery-qrcode/src/jquery.qrcode.js
+// @require		    http://jeromeetienne.github.io/jquery-qrcode/src/qrcode.js
 // @updateURL		https://raw.githubusercontent.com/MrLeo/Leo.UserScript/master/Mr.Leo.js
 // @downloadURL		https://raw.githubusercontent.com/MrLeo/Leo.UserScript/master/Mr.Leo.js
 // @version      	0.1

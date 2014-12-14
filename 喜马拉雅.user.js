@@ -3,8 +3,8 @@
 // @description 	喜马拉雅专辑列表浏览记录添加Cookie记录
 // @namespace   	http://use.i.E.your.homepage/
 // @version      	0.1
-// @updateURL       https://github.com/MrLeo/Leo.UserScript/blob/master/喜马拉雅.user.js
-// @downloadURL     https://github.com/MrLeo/Leo.UserScript/blob/master/喜马拉雅.user.js
+// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/喜马拉雅.user.js
+// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/喜马拉雅.user.js
 // @match       	http://www.ximalaya.com/*
 // @include     	http://www.ximalaya.com/*
 // @require     	http://code.jquery.com/jquery-latest.js

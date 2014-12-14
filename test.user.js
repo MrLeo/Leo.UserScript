@@ -3,8 +3,8 @@
 // @namespace       http://use.i.E.your.homepage/
 // @description     userscript for mr.leo
 // @version         0.1
-// @updateURL       更新地址（UserScript.meta.js)
-// @downloadURL     更新地址（UserScript.user.js）
+// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/test.user.js
+// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/test.user.js
 // @match           http://*/*
 // @include         http://*/*
 // @exclude         http://*baidu.com/*

@@ -3,8 +3,8 @@
 // @description     人人影视地址选择助手
 // @namespace       http://use.i.E.your.homepage/
 // @version         0.1
-// @updateURL       https://github.com/MrLeo/Leo.UserScript/blob/master/人人影视.user.js
-// @downloadURL     https://github.com/MrLeo/Leo.UserScript/blob/master/人人影视.user.js
+// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/人人影视.user.js
+// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/人人影视.user.js
 // @match           http://www.yyets.com/*
 // @match           http://fd.yyets.tk/*
 // @match           http://www.rrys.tv/*
