@@ -8,9 +8,11 @@
 // @match           http://www.yyets.com/*
 // @match           http://fd.yyets.tk/*
 // @match           http://www.rrys.tv/*
+// @match         	http://www.zimuzu.tv/*
 // @include         http://www.yyets.com/*
 // @include         http://fd.yyets.tk/*
 // @include         http://www.rrys.tv/*
+// @include         http://www.zimuzu.tv/*
 // @require     	http://code.jquery.com/jquery-latest.js
 // ==/UserScript==
 
