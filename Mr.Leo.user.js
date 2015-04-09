@@ -79,7 +79,7 @@ $(function(){
         }		
     });
     //右下角二维码 eg.http://www.17sucai.com/pins/demoshow/2003
-    $('#code_img').append('<div id="qrcodeTable" style="style="position: fixed; bottom: 120px; right: 100px; width: 256px; text-align: right; z-index: 99999;""></div> ');
+    $('#code_img').append('<div id="qrcodeTable" style="position: fixed; bottom: 120px; right: 100px; width: 256px; text-align: right; z-index: 99999;></div> ');
     jQuery('#qrcodeTable').qrcode({
         text: "" + window.location.href
         //width:100,
@@ -100,12 +100,14 @@ $(function(){
     );
     */
     //删除iFrame中的二维码
-    if(self.frameElement.tagName=="IFRAME"){
-        $('#qrcodeTable').remove();
-        $('#code').remove();
-        $('#code_img').remove();
-        $('#gotop').remove();
-    }
+    try {
+        if (self.frameElement.tagName == "IFRAME") {
+            $('#qrcodeTable').remove();
+            $('#code').remove();
+            $('#code_img').remove();
+            $('#gotop').remove();
+        }
+    } catch (e) { }
 });
 //*******************************************************************************************************************//
 //爱唯侦察
