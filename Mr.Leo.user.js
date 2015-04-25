@@ -5,8 +5,8 @@
 // @match       	*
 // @include     	*
 // @require     	http://code.jquery.com/jquery-latest.js
-// @require		    http://jeromeetienne.github.io/jquery-qrcode/src/jquery.qrcode.js
-// @require		    http://jeromeetienne.github.io/jquery-qrcode/src/qrcode.js
+// @require		http://jeromeetienne.github.io/jquery-qrcode/src/jquery.qrcode.js
+// @require		http://jeromeetienne.github.io/jquery-qrcode/src/qrcode.js
 // @updateURL		https://raw.githubusercontent.com/MrLeo/Leo.UserScript/master/Mr.Leo.js
 // @downloadURL		https://raw.githubusercontent.com/MrLeo/Leo.UserScript/master/Mr.Leo.js
 // @version      	0.1
@@ -42,7 +42,7 @@ $(function(){
     css += '<div id="code" title="扫描二维码"></div>';
     css += '<div id="code_img"></div>';
     css += '<a id="gotop" href="javascript:void(0)"></a>';
-    $('body').append(css);
+    $('body').eq(0).append(css);
     
     var h = $(window).height();
 	var t = $(document).scrollTop();
