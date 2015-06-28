@@ -30,7 +30,6 @@ $(function(){
         checkrul : function(){
             var url = this.url;
             console.log("当前访问的URL",url);
-            //debugger;
             if(~url.indexOf('http://360unicom.oicp.net:8888/login_toLogin')){
                 console.log('登录万金先生后台');
                 this.wjxsAdmin();
