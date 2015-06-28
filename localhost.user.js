@@ -5,8 +5,8 @@
 // @match           http://*/*
 // @include         http://*/*
 // @require         http://code.jquery.com/jquery-latest.js
-// @updateURL       file:///f:/WWW/Leo.UserScript/localhost.user.js
-// @downloadURL     file:///f:/WWW/Leo.UserScript/localhost.user.js
+// @updateURL       http://localhost:1234/localhost.user.js
+// @downloadURL     http://localhost:1234/localhost.user.js
 // @version         0.1
 // ==/UserScript==
 //根据传入的URL，在head里生成script引用DOM对象
