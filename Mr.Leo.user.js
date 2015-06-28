@@ -41,9 +41,17 @@ $(function () {
     css += '#QRcode_img{width:256px;height:256px;/*background:url(http://www.17sucai.com/preview/1093/2013-08-22/%E6%88%91%E5%96%9C%E6%AC%A2%E5%8F%B3%E4%BE%A7%E5%BE%AE%E4%BF%A1%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/images/icon.png) -4px -3px no-repeat;*/position:fixed;right:90px;bottom:120px;cursor:pointer;display:none;_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));_margin-bottom:67px;}';
     css += '</style>';
     css += '<div id="QRcode" title="扫描二维码"></div>';
-    css += '<div id="QRcode_img"></div>';
+    css += '<div id="QRcode_img"><div id="qrcodeTable" style="position: fixed; bottom: 120px; right: 100px; width: 256px; text-align: right; z-index: 99999;></div></div>';
     css += '<a id="gotop" href="javascript:void(0)"></a>';
     $('body').eq(0).append(css);
+    
+    //右下角二维码 eg.http://www.17sucai.com/pins/demoshow/2003
+    debugger;
+    jQuery('#qrcodeTable').qrcode({
+        text: "" + window.location.href
+        //width:100,
+        //height:100
+    });
 
     var h = $(window).height();
     var t = $(document).scrollTop();
@@ -78,13 +86,6 @@ $(function () {
         } else {
             $('#gotop').hide();
         }
-    });
-    //右下角二维码 eg.http://www.17sucai.com/pins/demoshow/2003
-    $('#QRcode_img').append('<div id="qrcodeTable" style="position: fixed; bottom: 120px; right: 100px; width: 256px; text-align: right; z-index: 99999;></div> ');
-    jQuery('#qrcodeTable').qrcode({
-        text: "" + window.location.href
-        //width:100,
-        //height:100
     });
     /*
     $('#qrcodeTable').hover(
