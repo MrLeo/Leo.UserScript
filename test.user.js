@@ -18,6 +18,7 @@ function createScriptLink(url) {
     scriptElement.setAttribute('src', url);
     document.head.appendChild(scriptElement);
     console.log('添加引用：' + (new XMLSerializer()).serializeToString(scriptElement));
+    return false;
 }
 //在head引入JQuery
 ; (function () {
