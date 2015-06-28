@@ -56,13 +56,13 @@ $(function () {
         $(document).scrollTop(0);
     });
     $('#QRcode').hover(function () {
-        $(this).attr('id', 'code_hover');
+        $(this).attr('id', 'QRcode_hover');
         $('#QRcode_img').css('width', '0px').show();
         $('#QRcode_img').animate({
             width: '256px'
         }, 500);
     }, function () {
-            $(this).attr('id', 'code');
+            $(this).attr('id', 'QRcode');
             //$('#QRcode_img').hide(); 
             $('#QRcode_img').animate({
                 width: '0px'
