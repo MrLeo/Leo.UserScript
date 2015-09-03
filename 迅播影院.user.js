@@ -4,8 +4,10 @@
 // @description     userscript for mr.leo
 // @match           http://*xiamp4.com/*
 // @include         http://*xiamp4.com/*
-// @exclude 　　　　 http://*baidu.com/*
+// @exclude 　　　　http://*baidu.com/*
 // @require         http://code.jquery.com/jquery-latest.js
+// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/迅播影院.user.js
+// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/迅播影院.user.js
 // @version         0.1
 // ==/UserScript==
 
