@@ -4,7 +4,7 @@
 // @description     userscript for mr.leo
 // @match           http://*xiamp4.com/*
 // @include         http://*xiamp4.com/*
-// @exclude 　　　　http://*baidu.com/*
+// @exclude 　　　　 http://*baidu.com/*
 // @require         http://code.jquery.com/jquery-latest.js
 // @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/迅播影院.user.js
 // @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/迅播影院.user.js
@@ -26,11 +26,11 @@ function createScriptLink(url){
 })();
 //*******************************************************************************************************************//
 $(function(){
-	$('.ndownlist').append("<textarea id=\"uri\" rows=\"10\" cols=\"20\"></textarea>");
+	$('.ndownlist').append("<textarea class=\"uri\" rows=\"10\" cols=\"20\"></textarea>");
 	$('.ndownlist').find('li i input').each(function(){
 		console.log($(this).val());
 		
-		$('#uri').append($(this).val() + '\n').css({
+		$('.uri',$(this).closest('.ndownlist')).append($(this).val() + '\n').css({
 			'width': '905px',
 			'overflow': 'auto',
 			'line-height': '25px',
