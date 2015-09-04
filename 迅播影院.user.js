@@ -6,7 +6,7 @@
 // @include         http://*xiamp4.com/*
 // @exclude         http://*baidu.com/*
 // @require         http://code.jquery.com/jquery-latest.js
-// @require         http://www.helloweba.com/demo/zclip/js/jquery.zclip.min.js
+// @require         http://zeroclipboard.org/javascripts/zc/v2.2.0/ZeroClipboard.js
 // @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/迅播影院.user.js
 // @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/迅播影院.user.js
 // @version         0.1
