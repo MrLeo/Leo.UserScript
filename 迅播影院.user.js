@@ -11,7 +11,6 @@
 // @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/迅播影院.user.js
 // @version         0.1
 // ==/UserScript==
-
 //根据传入的URL，在head里生成script引用DOM对象
 function createScriptLink(url){
     var scriptElement = document.createElement('script');
@@ -19,54 +18,81 @@ function createScriptLink(url){
     scriptElement.setAttribute('src', url);
     document.head.appendChild(scriptElement);
     //console.log('添加引用：' + (new XMLSerializer()).serializeToString(scriptElement));
+    return true;
 }
-//在head引入JQuery
-;(function(){
-    //window.jQuery || createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
-    if (typeof jQuery == 'undefined') createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js');
-})();
-//*******************************************************************************************************************//
 
-createScriptLink('//www.helloweba.com/demo/zclip/js/jquery.zclip.min.js');
+/**
+ * 添加 ZeroClipboard 引用
+ * https://github.com/zeroclipboard/ZeroClipboard
+ */
+window.jQuery || createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js');
+createScriptLink('http://zeroclipboard.org/javascripts/zc/v2.2.0/ZeroClipboard.js');
 
-var style = '<style type="text/css">';
-style += '.demo{width:760px; margin:40px auto 0 auto; min-height:150px;}';
-style += 'textarea{width:100%; height:80px; border:1px solid #ddd; color:#666}';
-style += '#para{line-height:24px; background:#f7f7f7; padding:10px}';
-style += '.copy{line-height:32px}';
-style += '#msg{margin-left:10px; color:green; border:1px solid #3c3; background:url(http://www.helloweba.com/demo/zclip/checkmark.png) no-repeat 2px 3px; padding:3px 6px 3px 20px}';
-style += '</style>';
-$('head').append(style);
+$ = jQuery;
 
-$('.ndownlist')
-.append("<textarea class=\"uri\" rows=\"10\" cols=\"20\"></textarea>")
-.find('li i input').each(function(){
-    $('.uri',$(this).closest('.ndownlist')).append($(this).val() + '\n').css({
-        'width': '905px',
-        'overflow': 'auto',
-        'line-height': '25px',
-        'word-wrap': 'break-word'
-    }).select();
-});
+//设置样式
+var styles = '';
+styles += '.copy{line-height:35px;float: left;}';
+styles += '.msg{float: left;margin: 5px 5px 5px 20px;color:green; border:1px solid #3c3; background:url(http://www.helloweba.com/demo/zclip/checkmark.png) no-repeat 2px 3px; padding:3px 6px 3px 20px}';
+var styleElement = document.createElement('style');
+styleElement.setAttribute('type','text/css');
+styleElement.innerHTML = styles;
+document.head.appendChild(styleElement);
 
-var $CopyToClip = $('.ckbox p').find('a').eq(0);
-console.log($CopyToClip[0].outerHTML);
-$CopyToClip.zclip({
-    path: 'http://www.helloweba.com/demo/zclip/js/ZeroClipboard.swf',
-    copy: function(){
-        var $selected = $(this).closest('ul').find('i input:checked');
-        var selected ="";
-        $selected.each(function(index){
-            console.log(this.value);
-            selected += this.value;
-        });
-        return selected;
-    },
-    afterCopy: function(){
-        $("<span id='msg'/>").insertAfter($CopyToClip).text('复制成功').fadeOut(2000);
+//检测 ZeroClipboard 是否已经加载成功
+function checkedCopyReady(){
+    if(typeof ZeroClipboard != "undefined" && ZeroClipboard){
+        console.log(ZeroClipboard.version);
+        copy();
+    }else{
+        setTimeout(checkedCopyReady,600);
     }
-});
+}
+checkedCopyReady();
 
+function copy(){
+    // 全局设置 
+    ZeroClipboard.config({
+      swfPath : 'http://code.ciaoca.com/javascript/zeroclipboard/demo/js/ZeroClipboard.swf' 
+    });
 
+    //添加复制链接按钮
+    var $ndownlists = $('.ndownlist');
+    $ndownlists.append('<a href="javascript:void(0);" class="copy">复制选中的链接</a>');
+    
+    //绑定监听复制按钮事件
+    var clip = new ZeroClipboard($('.copy'));
+    clip.on("ready", function (event) {
+            console.log("flash ready");
+        })
+        .on("copy", function (event) {
+            var clipboard = event.clipboardData;
+
+            var links ="";
+            $(event.target).parents('.ndownlist').find('ul i input:checked').each(function(i){
+                links+=this.value+"\n";
+            });
+            console.log(links);
+
+            clipboard.setData("text/plain", links);
+            clipboard.setData("text/html", "<div>"+links+"</div>" );
+        })
+        .on("aftercopy", function( event ) {
+            var $msg = $(".msg",$(event.target))
+            if($msg.remove()){
+                $msg.remove();
+            }
+            if(!event.data['text/plain']){
+                $("<span class='msg'/>").insertAfter($(event.target)).text('您没有选择任何链接').fadeOut(2000);
+                return;
+            }
+            $("<span class='msg'/>").insertAfter($(event.target)).text('复制成功').fadeOut(2000);
+            $("<br/><textarea class=\"uri\" rows=\"20\" cols=\"30\" style=\"width:100%\"></textarea>").insertAfter($(event.target).next('.msg')).text(event.data['text/plain']);
+        })
+        .on("error", function(event) {
+            console.log("error:",event);
+        });
+    
+}
 
 
