@@ -6,7 +6,6 @@
 // @include         http://*xiamp4.com/*
 // @exclude         http://*baidu.com/*
 // @require         http://code.jquery.com/jquery-latest.js
-// @require         http://code.ciaoca.com/javascript/zeroclipboard/demo/js/ZeroClipboard.swf
 // @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/迅播影院.user.js
 // @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/迅播影院.user.js
 // @version         0.1
@@ -62,15 +61,13 @@ $(function(){
         var $ndownlists = $('.ndownlist');
         $ndownlists.append('<a href="javascript:void(0);" class="copy">复制选中的链接</a>');
         console.log("添加按钮：",$ndownlists);
-        
+
         //绑定监听复制按钮事件
         var clip = new ZeroClipboard($('.copy'));
-        console.log(clip);
         clip.on("ready", function (event) {
             console.log("flash ready");
         }).on("copy", function (event) {
             var clipboard = event.clipboardData;
-
             var links ="";
             $(event.target).parents('.ndownlist').find('ul i input:checked').each(function(i){
                 links+=this.value+"\n";
@@ -84,7 +81,7 @@ $(function(){
                 $uris= $(".uris",$(event.target).parent());
             if($msg) $msg.remove();
             if($uris) $uris.remove();
-
+            
             console.log("剪贴板：",event.data['text/plain']);
             if(!event.data['text/plain']){
                 $("<span class='msg'/>").insertAfter($(event.target)).text('您没有选择任何链接').fadeOut(2000);
