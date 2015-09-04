@@ -32,8 +32,8 @@ $ = jQuery;
 
 //设置样式
 var styles = '';
-styles += '.copy{line-height:35px;float: left;}';
-styles += '.msg{float: left;margin: 5px 5px 5px 20px;color:green; border:1px solid #3c3; background:url(http://www.helloweba.com/demo/zclip/checkmark.png) no-repeat 2px 3px; padding:3px 6px 3px 20px}';
+styles += '.copy{float: left;line-height:35px;}';
+styles += '.msg{float: left !important;margin: 5px 5px 5px 20px;color:green; border:1px solid #3c3; background:url(http://www.helloweba.com/demo/zclip/checkmark.png) no-repeat 2px 3px; padding:3px 6px 3px 20px}';
 var styleElement = document.createElement('style');
 styleElement.setAttribute('type','text/css');
 styleElement.innerHTML = styles;
@@ -78,16 +78,17 @@ function copy(){
             clipboard.setData("text/html", "<div>"+links+"</div>" );
         })
         .on("aftercopy", function( event ) {
-            var $msg = $(".msg",$(event.target))
-            if($msg.remove()){
-                $msg.remove();
-            }
+            var $msg = $(".msg",$(event.target).parent()),
+                $uris= $(".uris",$(event.target).parent());
+            if($msg) $msg.remove();
+            if($uris) $uris.remove();
+
             if(!event.data['text/plain']){
                 $("<span class='msg'/>").insertAfter($(event.target)).text('您没有选择任何链接').fadeOut(2000);
                 return;
             }
             $("<span class='msg'/>").insertAfter($(event.target)).text('复制成功').fadeOut(2000);
-            $("<br/><textarea class=\"uri\" rows=\"20\" cols=\"30\" style=\"width:100%\"></textarea>").insertAfter($(event.target).next('.msg')).text(event.data['text/plain']);
+            $("<textarea class=\"uris\" rows=\"20\" cols=\"30\" style=\"width:100%\"></textarea>").insertAfter($(event.target).next('.msg')).text(event.data['text/plain']);
         })
         .on("error", function(event) {
             console.log("error:",event);
