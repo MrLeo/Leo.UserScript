@@ -33,8 +33,8 @@ $(function(){
 
     //设置样式
     var styles = '';
-    styles += '.copy{float: left;line-height:35px;}';
-    styles += '.msg{float: left !important;margin: 5px 5px 5px 20px;color:green; border:1px solid #3c3; background:url(http://www.helloweba.com/demo/zclip/checkmark.png) no-repeat 2px 3px; padding:3px 6px 3px 20px}';
+    styles += '.copy{float: left; line-height:35px; display: block; text-align: center; width: 100%; margin: 10px 0; box-sizing: border-box; background-color: #3476DA; font-size: larger; font-weight: bolder; color: #fff; border-radius: 10px; }';
+    styles += '.msg{float: left !important; margin: 5px 5px 5px 20px;color:green; border:1px solid #3c3; background:url(http://www.helloweba.com/demo/zclip/checkmark.png) no-repeat 2px 3px; padding:3px 6px 3px 20px; }';
     var styleElement = document.createElement('style');
     styleElement.setAttribute('type','text/css');
     styleElement.innerHTML = styles;
