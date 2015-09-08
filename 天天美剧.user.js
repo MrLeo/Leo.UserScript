@@ -22,10 +22,11 @@ function createScriptLink(url){
     window.jQuery || createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
     
     var url = window.location.href;
+    console.log('[leo]',`${url}`);
 
     if(localStorage[url]){
         var saw = localStorage[url].split("^");
-		console.log(`${saw}`);
+	console.log('[leo]',`${saw}`);
         for(var url in saw){
             var href = saw[url];
             $('a[href="'+href+'"]').css({
