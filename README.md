@@ -19,12 +19,13 @@ function createScriptLink(url){
     scriptElement.setAttribute('type', 'text/javascript');
     scriptElement.setAttribute('src', url);
     document.head.appendChild(scriptElement);
-    console.log('添加引用：' + (new XMLSerializer()).serializeToString(scriptElement));
+    console.log('[添加引用]', (new XMLSerializer()).serializeToString(scriptElement));
 }
 //在head引入JQuery
 ;(function(){
     window.jQuery || createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
     if($){$ = window.jQuery;}
+    console.log('[leo]', `${$}`);
     
 })();
 //*******************************************************************************************************************//
