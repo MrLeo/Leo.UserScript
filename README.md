@@ -5,11 +5,13 @@
 ```js
 // ==UserScript==
 // @name            MyUserScript Template
-// @namespace       http://use.i.E.your.homepage/
+// @namespace       https://github.com/MrLeo/Leo.UserScript
 // @description     userscript for mr.leo
 // @match           http://*/*
 // @include         http://*/*
 // @require         http://code.jquery.com/jquery-latest.js
+// @updateURL       uploadFilePath.user.js
+// @downloadURL     uploadFilePath.user.js
 // @version         0.1
 // ==/UserScript==
 
@@ -21,12 +23,12 @@ function createScriptLink(url){
     document.head.appendChild(scriptElement);
     console.log('[添加引用]', (new XMLSerializer()).serializeToString(scriptElement));
 }
-//在head引入JQuery
 ;(function(){
+    //在head引入JQuery
     window.jQuery || createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
     if($){$ = window.jQuery;}
     console.log('[leo]', `${$}`);
     
 })();
-//*******************************************************************************************************************//
+
 ```
