@@ -22,14 +22,13 @@ function createScriptLink(url){
     window.jQuery || createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
     
     var url = window.location.href;
-    console.log('[leo]',`${url}`);
+    console.log(`[leo] ${url}`);
 
     if(localStorage[url]){
-        var saw = localStorage[url].split("^");
-	console.log('[leo]',`${saw}`);
-        for(var url in saw){
-            var href = saw[url];
-            $('a[href="'+href+'"]').css({
+        var saw = JSON.parse(localStorage[url]);
+        console.log(`[leo] ${saw}`);
+        for (var i = 0, len = saw.history.length; i < len; i++) {
+            $('a:contains("' + saw.history[i] + '")').css({
                 'color': '#999',
                 'text-decoration': 'none'
             }).wrap("<del></del>");
@@ -37,12 +36,15 @@ function createScriptLink(url){
     }
 
     $('#content .entry a').click(function(e){
-        var selected = [];
-        if(localStorage[url])
-            selected = localStorage[url].split("^");
-        selected.push($(this).attr('href'));
-		//selected = unique(selected);
-        localStorage[url] = selected.join("^");
+        var selected = {
+            'title': $('title').text(),
+            'history':[]
+        };
+        if (localStorage[url]) {
+            selected = JSON.parse(localStorage[url]);
+        }
+        selected.history.push($(this).text());
+        localStorage[url] = JSON.stringify(selected);
         $(this).css({
             'color': '#999',
             'text-decoration': 'none'
