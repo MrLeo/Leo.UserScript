@@ -26,7 +26,7 @@ function createScriptLink(url){
 
     if(localStorage[url]){
         var saw = JSON.parse(localStorage[url]);
-        console.log(`[leo] ${saw}`);
+        console.log(`[leo] ${JSON.stringify(saw)}`);
         for (var i = 0, len = saw.history.length; i < len; i++) {
             $('a:contains("' + saw.history[i] + '")').css({
                 'color': '#999',
