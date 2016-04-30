@@ -30,7 +30,7 @@ function loadURL(uri){
             console.log('[Leo]LoadHTML=>',res);
             res = res.replace(/(^\s+)|(\s+$)/gm,'');
             res = res.replace(/\n/gm,'');
-            var matchRes = res.match(/<div[^div]+class="col-md-6 text-center">[^div]+div>/mg);
+            var matchRes = res.match(/<div.*?class="col-md-6 text-center">[^div]+div>/gm);
             console.log('[Leo]Match Info=>',matchRes);
             container = $(matchRes[2]);
         }
