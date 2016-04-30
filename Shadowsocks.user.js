@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  userscript for mr.leo
 // @author       Mr.Leo
-// @match        http://freeshadowsocks.cf/*
+// @match        http://*/*
 // @grant        GM_registerMenuCommand
 // @require      http://code.jquery.com/jquery-latest.js
 // @require      http://freeshadowsocks.cf/js/jquery.base64.min.js
