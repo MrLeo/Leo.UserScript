@@ -22,11 +22,11 @@ function createScriptLink(url){
     window.jQuery || createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
     
     var url = window.location.href;
-    console.log(`[leo] ${url}`);
+    console.log(`[leo]当前URL => ${url}`);
 
     if(localStorage[url]){
         var saw = JSON.parse(localStorage[url]);
-        console.log(`[leo] ${JSON.stringify(saw)}`);
+        console.log('[leo]下载记录 => ',saw);
         for (var i = 0, len = saw.history.length; i < len; i++) {
             $('a:contains("' + saw.history[i] + '")').css({
                 'color': '#999',
@@ -35,7 +35,7 @@ function createScriptLink(url){
         }
     }
 
-    $('#content .entry a').click(function(e){
+    $('#primary .single-content, #entry').find('p').on('click', 'a', function(e){
         var selected = {
             'title': $('title').text(),
             'history':[]
@@ -44,6 +44,7 @@ function createScriptLink(url){
             selected = JSON.parse(localStorage[url]);
         }
         selected.history.push($(this).text());
+        console.log('[Leo]更新下载记录 => ',selected);
         localStorage[url] = JSON.stringify(selected);
         $(this).css({
             'color': '#999',
