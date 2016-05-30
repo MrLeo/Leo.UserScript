@@ -35,7 +35,7 @@ function createScriptLink(url){
         }
     }
 
-    $('#primary .single-content, #entry').find('p').on('click', 'a', function(e){
+    $('#primary .single-content, #entry').on('click', 'a', function(e){
         var selected = {
             'title': $('title').text(),
             'history':[]
