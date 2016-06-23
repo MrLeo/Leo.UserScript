@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e2e3944c-b3a5-4383-87de-73e883cb7de1" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OneNote.user.js" afterPath="$PROJECT_DIR$/OneNote.user.js" />
     </list>
     <ignored path="Leo.UserScript.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/OneNote.user.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.02440678">
-              <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+              <caret line="1" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="58" />
               <folding>
                 <element signature="n#!!doc;n#onenote#0" expanded="true" />
                 <element signature="n#!!doc;n#OnenoteClipper#0" expanded="true" />
@@ -201,7 +200,13 @@
       <option name="project" value="LOCAL" />
       <updated>1466698779575</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update">
+      <created>1466698972370</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1466698972370</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -291,7 +296,7 @@
     <entry file="file://$PROJECT_DIR$/OneNote.user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.02440678">
-          <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+          <caret line="1" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="58" />
           <folding>
             <element signature="n#!!doc;n#onenote#0" expanded="true" />
             <element signature="n#!!doc;n#OnenoteClipper#0" expanded="true" />
