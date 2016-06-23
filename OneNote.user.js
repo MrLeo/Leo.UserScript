@@ -5,7 +5,7 @@
 // @include         http://*
 // @include         https://*
 // @version         1.0
-// @grant           none
+// @grant           GM_registerMenuCommand
 // @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/OneNote.user.js
 // @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/OneNote.user.js
 // ==/UserScript==
