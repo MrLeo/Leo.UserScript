@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            OneNote Clipper
+// @name            OneNote Clipper - Ctrl+Alt+O
 // @namespace       https://github.com/MrLeo/Leo.UserScript
 // @description     The clipper Bookmarklet
 // @include         http://*
