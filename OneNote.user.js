@@ -26,7 +26,7 @@ function onenote() {
  * @constructor
  */
 function OnenoteClipper() {
-    console.log("Clipper Hotkey Pressed")
+    console.log("Clipper Hotkey Pressed");
     onenote(); // Open OneNote Clipper.
 }
 

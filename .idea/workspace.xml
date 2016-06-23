@@ -27,12 +27,13 @@
       <file leaf-file-name="OneNote.user.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OneNote.user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17084746">
-              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.68338984">
+              <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
               <folding>
+                <element signature="n#!!doc" expanded="true" />
                 <element signature="n#!!doc;n#onenote#0" expanded="true" />
                 <element signature="n#!!doc;n#OnenoteClipper#0" expanded="true" />
-                <element signature="e#1046#1063#0" expanded="true" />
+                <element signature="e#1047#1064#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -189,7 +190,13 @@
       <option name="project" value="LOCAL" />
       <updated>1466698591994</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1466698736336</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1466698736336</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -278,12 +285,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OneNote.user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17084746">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.68338984">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="n#!!doc;n#onenote#0" expanded="true" />
             <element signature="n#!!doc;n#OnenoteClipper#0" expanded="true" />
-            <element signature="e#1046#1063#0" expanded="true" />
+            <element signature="e#1047#1064#0" expanded="true" />
           </folding>
         </state>
       </provider>
