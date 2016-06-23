@@ -10,6 +10,9 @@
 // @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/OneNote.user.js
 // ==/UserScript==
 
+/**
+ * OneNote 剪裁
+ */
 var onenote = function () {
     var jsCode = document.createElement('script');
     jsCode.setAttribute('src', 'https://www.onenote.com/clipper/root?ClipperId=ON-6a191eef-84a2-4491-9cc2-2e4560cfb9af&ClipperType=Bookmarklet&ClipperVersion=2.0.2');
@@ -17,6 +20,10 @@ var onenote = function () {
     jsCode.setAttribute('type', 'text/javascript');
     document.body.appendChild(jsCode);
 };
+
+/**
+ * 监听键盘操作
+ */
 (function () {
     document.addEventListener('keydown', function (e) {
         // pressed ctrl+alt+o
@@ -26,7 +33,10 @@ var onenote = function () {
     }, false);
 })();
 
-//获取并生成二维码
+/**
+ * 启动 OneNote 剪裁
+ * @constructor
+ */
 function OnenoteClipper() {
     console.log("Clipper Hotkey Pressed")
     onenote(); // Open OneNote Clipper.
