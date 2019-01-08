@@ -19,6 +19,7 @@
   * [百度网盘下载助手](https://greasyfork.org/scripts/986-百度网盘助手/code/百度网盘助手.user.js)
 
 * 油猴脚本搜索(根据受欢迎程度排列)：
+  * [吾爱油猴社区](https://52youhou.com/)
   * [userscript 官网](http://userscripts-mirror.org/)
   * [Greasy Fork](https://greasyfork.org/zh-CN)
   * [MonkeyGuts](https://monkeyguts.com/index.php?lang=zh)
