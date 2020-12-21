@@ -19,7 +19,6 @@
   * [百度网盘下载助手](https://greasyfork.org/scripts/986-百度网盘助手/code/百度网盘助手.user.js)
 
 * 油猴脚本搜索(根据受欢迎程度排列)：
-  * [吾爱油猴社区](https://52youhou.com/)
   * [userscript 官网](http://userscripts-mirror.org/)
   * [Greasy Fork](https://greasyfork.org/zh-CN)
   * [MonkeyGuts](https://monkeyguts.com/index.php?lang=zh)
@@ -32,10 +31,12 @@
 
 #### Chrome userscript 模本
 
+> 开发文档: https://www.tampermonkey.net/documentation.php
+
 ```js
 // ==UserScript==
 // @name            MyUserScript Temp
-// @namespace       http://xuebin.me
+// @namespace       https://xuebin.me
 // @description     userscript for mr.leo
 // @match           http* */://*/*
 // @include         http* */://*/*
@@ -59,7 +60,32 @@ function createScriptLink(url) {
   //window.jQuery || createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
   if (typeof jQuery == 'undefined') createScriptLink('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
 })()
-//*******************************************************************************************************************//
+```
+
+```js
+// ==UserScript==
+// @name         Debug Userscript
+// @namespace    https://xuebin.me
+// @version      0.1
+// @description  This is a debug script to load userscripts from local file system. NOTICE, you need to turn on Allow access to file URLs to @require local file https://www.tampermonkey.net/documentation.php
+// @author       Leo
+// @match        http*://*
+// @include      http://*
+// @include      https://*
+// @include      *
+// @grant        GM_xmlhttpRequest
+// @grant        GM_addStyle
+// @grant        GM_getResourceText
+// @require      https://unpkg.com/dexie@latest/dist/dexie.js
+// @require      file:///home/einverne/Git/userscripts/douban_export/douban_exporter.user.js
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    console.log("debug script start here");
+    // Your code here...
+})();
 ```
 
 # 本地开发
