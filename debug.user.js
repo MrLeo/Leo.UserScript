@@ -14,6 +14,7 @@
 // @grant           GM_addStyle
 // @grant           GM_getResourceText
 // @require         https://unpkg.com/dexie@latest/dist/dexie.js
+// @require         https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.15/lodash.min.js
 // @require         file:///Users/leo/www/Leo.UserScript/localhost.user.js
 // ==/UserScript==
 
