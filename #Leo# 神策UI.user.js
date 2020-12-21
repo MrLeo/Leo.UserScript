@@ -3,8 +3,8 @@
 // @version         0.1
 // @description     自定义神策样式
 // @author          Leo
-// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/#Leo#%20神策UI.user.js
-// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/#Leo#%20神策UI.user.js
+// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/%23Leo%23%20%E7%A5%9E%E7%AD%96UI.user.js
+// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/%23Leo%23%20%E7%A5%9E%E7%AD%96UI.user.js
 // @include         *://dsm.zhaopin.cn/*
 // ==/UserScript==
 

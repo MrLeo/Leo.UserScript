@@ -4,8 +4,8 @@
 // @version         0.1
 // @description     try to take over the world!
 // @author          Leo
-// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/#RD6#%20自动约聊.user.js
-// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/#RD6#%20自动约聊.user.js
+// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/%23RD6%23%20%E8%87%AA%E5%8A%A8%E7%BA%A6%E8%81%8A.user.js
+// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/%23RD6%23%20%E8%87%AA%E5%8A%A8%E7%BA%A6%E8%81%8A.user.js
 // @match           *://rd6.zhaopin.com/*
 // @match           *://rd6-pre.zhaopin.com/*
 // @require         https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js
