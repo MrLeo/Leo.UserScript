@@ -2,26 +2,20 @@
 
 > https://github.com/MrLeo/Leo.UserScript
 
-#### UserScript 介绍：
+## UserScript 介绍
 
 > UserScript 又称“油猴脚本”，其实就是一个在浏览器中能本地执行扩展名为`.user.js`的 js 文件，使用 UserScript 可以自定义被浏览的网页，更多详细可参考[维基百科](https://zh.wikipedia.org/wiki/Greasemonkey)中的介绍。
 
-#### UserScript 优势：
+## UserScript 优势
 
 > 在 Chrome 中，UserScript 类似于一个精简的 Chrome 扩展，两者的区别在于 Chrome 扩展是在浏览器启动的时候就会执行，但 UserScript 是在使用的时才候执行，这样就大大减少了 Chrome 的内存占用。而且 UserScript 只是一个单纯的 js 文件，可以随意定制修改。
 
----
+## UserScript 安装
 
 * [Chrome 原生安装 UserScript 脚本](https://github.com/EchoFUN/melodycoder/issues/12)
 * [Chrome 油猴脚本管理插件 - TamperMonkey](https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo)
-* [自定义油猴脚本模版](https://raw.githubusercontent.com/MrLeo/Leo.UserScript/master/README.md)
-* 热门油猴脚本推荐：
-
-  * [二维码生成](http://userscripts-mirror.org/scripts/source/185467.user.js)
-  * [百度网盘下载助手](https://greasyfork.org/scripts/986-百度网盘助手/code/百度网盘助手.user.js)
-
-* 油猴脚本搜索(根据受欢迎程度排列)：
-  * [userscript 官网](http://userscripts-mirror.org/)
+* [油猴脚本搜索：](https://www.tampermonkey.net/scripts.php)
+  * [userscript](http://userscripts-mirror.org/)
   * [Greasy Fork](https://greasyfork.org/zh-CN)
   * [MonkeyGuts](https://monkeyguts.com/index.php?lang=zh)
   * [OpenUserJS.org](https://openuserjs.org/)
@@ -31,7 +25,7 @@
 
 ---
 
-#### Chrome userscript 模本
+# UserScript 模本
 
 > 开发文档: https://www.tampermonkey.net/documentation.php
 
@@ -109,9 +103,9 @@ function createScriptLink(url) {
 * 在 TM 中新建的脚本 Header 位置插入新行 ---- ”//@require file://<path>/<filename>"
 * 保存 TM 中新脚本，然后就结束了。
 
-# 一个例子：假设你的脚本在
+## 一个例子
 
-C:\Users\janb\Documents\Scripts\test.js 并且开头如下：
+假设你的脚本在 C:\Users\janb\Documents\Scripts\test.js 并且开头如下：
 
 ```js
 // ==UserScript==
@@ -141,7 +135,7 @@ console.log('running at ' + window.location.href)
 
 结束现在你就可以编辑本地”C:\Users\janb\Documents\Scripts\test.js“的文件，所有修改都会及时的反映到“http://tampermonkey.net/empty.html”这个网址。
 
-**几个注意点：**
+## 几个注意点
 
 * 一定注意将 TM 的允许访问本地文件勾选上～
 * 如果你的本地地址中文件夹有空格，用 %20 代替 ，例如“file://C:\Eigene%20Dateien\test.js”
