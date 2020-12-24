@@ -24,21 +24,26 @@
             setTimeout(()=>{
                 const doms = [] // jQuery.makeArray(doms)
 
+                // 简历项
                 jQuery('.recommend-item').each((index,dom)=>{
+                    // 过滤掉“暂不换工作”
                     if(!jQuery(dom).has(':contains("暂不换工作")').length){
-                        doms.push(jQuery(dom).find('.resume-button button:contains("免费聊天")')[0])
+                        // 约聊按钮
+                        const button = jQuery(dom).find('.resume-button button:contains("免费聊天")')[0]
+                        button && doms.push(button)
                     }
                 })
 
-                console.log(doms)
+                console.log('[LOG] -> 准备好的约聊',doms)
 
                 const clickDom = () => {
                     const dom = doms.shift()
-                    if (!dom) {
+                    dom && dom.click() && console.log('[LOG] -> 点击',dom)
+
+                    if (!doms.length) {
                         window.scrollTo(0,document.body.scrollHeight)
                         return
                     }
-                    dom.click()
                     setTimeout(clickDom,3000)
                 }
 
