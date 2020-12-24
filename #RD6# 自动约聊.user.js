@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name            #RD6# 自动约聊
-// @namespace       http://tampermonkey.net/
+// @namespace       https://xuebin.me
 // @version         0.1
 // @description     try to take over the world!
 // @author          Leo
