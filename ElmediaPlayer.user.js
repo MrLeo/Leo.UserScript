@@ -15,5 +15,4 @@ function command() {
   document.location.href='newelmediaplayer://'+encodeURIComponent(_.get(document.querySelector('#dpplayer video'),'src',location.href));
 }
 
-//在“用户脚本命令”添加两个命令
 GM_registerMenuCommand('Elmedia Player', command);
