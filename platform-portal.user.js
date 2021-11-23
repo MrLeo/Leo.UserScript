@@ -17,20 +17,7 @@
     typeof $ === 'undefined' && (window.$ = window.jQuery); // 在window上挂载
 
     $(function () {
-        // $(document).on('click', 'button.el-button.el-button--primary.el-button--mini', function(){
-        //     console.error('---------------------------------------------->',$(this))
-        //     $(this)
-        //     .closest('.el-tree-node__children')
-        //     .find('.el-button.el-button--primary.el-button--mini')
-        //     .not(this)
-        //     .each(function (index, Element) {
-        //         console.log(`[LOG] -> index, Element`, index, Element)
-        //         // $(Element).click()
-        //     })
-        // })
-
         let applying = false;
-
         listenAllAjax({
             filterUrl: '^https://fe-api-internal(-pre)?.zhaopin.com/platform-portal/gated-center/config/apply$',
             openCallback() { },
@@ -39,12 +26,12 @@
                 console.log('onReadyStateChangeCallback', args)
                 if (applying) return
                 setTimeout(() => {
-                    $('.el-tree-node.is-expanded')
-                        .find('.el-button.el-button--primary.el-button--mini')
-                        .each(function (index, Element) {
-                            applying = true
-                            $(Element).click()
-                        })
+                    const btns = $('.el-tree-node.is-expanded').find('.el-button.el-button--primary.el-button--mini')
+                    console.log(`[LOG] -> 应用工件`, btns)
+                    btns.each(function (index, Element) {
+                        applying = true
+                        $(Element).click()
+                    })
                     applying = false
                 }, 0)
             }
