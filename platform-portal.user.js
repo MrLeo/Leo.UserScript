@@ -8,7 +8,7 @@
 // @require         https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.15/lodash.min.js
 // @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/platform-portal.user.js
 // @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/platform-portal.user.js
-// @version         0.1
+// @version         0.2
 // ==/UserScript==
 
 //*******************************************************************************************************************//
