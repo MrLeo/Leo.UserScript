@@ -15,88 +15,15 @@
     if (typeof jQuery == 'undefined') await npmInstall('https://code.jquery.com/jquery-3.6.0.js'); // 直接引入
     typeof $ === 'undefined' && (window.$ = window.jQuery); // 在window上挂载
 
-    $(function () {
-        // $(document).on('click', 'button.el-button.el-button--primary.el-button--mini', function(){
-        //     console.error('---------------------------------------------->',$(this))
-        //     $(this)
-        //     .closest('.el-tree-node__children')
-        //     .find('.el-button.el-button--primary.el-button--mini')
-        //     .not(this)
-        //     .each(function (index, Element) {
-        //         console.log(`[LOG] -> index, Element`, index, Element)
-        //         // $(Element).click()
-        //     })
-        // })
-
-        let applying = false;
-
-        listenAllAjax({
-            filterUrl: '^https://fe-api-internal(-pre)?.zhaopin.com/platform-portal/gated-center/config/apply$',
-            openCallback() { },
-            sendCallback() { },
-            onReadyStateChangeCallback(...args) {
-                console.log('onReadyStateChangeCallback', args)
-                if (applying) return
-                setTimeout(() => {
-                    $('.el-tree-node.is-expanded')
-                        .find('.el-button.el-button--primary.el-button--mini')
-                        .each(function (index, Element) {
-                            applying = true
-                            $(Element).click()
-                        })
-                    applying = false
-                }, 0)
-            }
-        })
-    });
-})();
-//*******************************************************************************************************************//
-// 在页面中插入<script />标签
-function injectScript(url) {
-    return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = url;
-        script.onload = () => {
-            console.log(url, ' 安装成功。');
-            resolve(url);
-        };
-        script.onerror = () => {
-            console.log(url, ' 安装失败。');
-            reject(url);
-        };
-        document.body.appendChild(script);
-        // document.body.removeChild(script);
+    listenAllAjax({
+        filterUrl: '^https://fe-api-internal(-pre)?.zhaopin.com/platform-portal/gated-center/config/apply$',
+        openCallback() { },
+        sendCallback() { },
+        onReadyStateChangeCallback(...args) {
+            console.log('onReadyStateChangeCallback', args)
+        }
     })
-}
-//*******************************************************************************************************************//
-async function npmInstall(originName) {
-    const name = originName.trim();
-
-    // 三种引入方式
-    // 如果是一个有效的URL，直接通过<script />标签插入
-    if (/^https?:\/\//.test(name)) return await injectScript(name);
-
-    // 如果指定了版本，尝试使用unpkg加载
-    if (name.indexOf('@') !== -1) return await injectScript(`https://unpkg.com/${name}`);
-
-    // 否则，尝试使用cdnjs搜索
-    const searchPromise = await fetch(
-        `https://api.cdnjs.com/libraries?search=${name}`,
-        { referrerPolicy: 'no-referrer' } // 不显示referrer的任何信息在请求头中
-    );
-    const { results, total } = await searchPromise.json();
-    if (total === 0) {
-        console.error('Sorry, ', name, ' not found, please try another keyword.');
-        return;
-    }
-    // 取结果中最相关的一条
-    const { name: exactName, latest: url } = results[0];
-    if (name !== exactName) {
-        console.log(name, ' not found, import ', exactName, ' instead.');
-    }
-    // 通过<script />标签插入
-    return await injectScript(url);
-}
+})();
 //*******************************************************************************************************************//
 function listenAllAjax({ filterUrl = '', openCallback = () => { }, sendCallback = () => { }, onReadyStateChangeCallback = () => { } } = {}) {
     const reg = new RegExp(filterUrl)
@@ -129,4 +56,50 @@ function listenAllAjax({ filterUrl = '', openCallback = () => { }, sendCallback 
     window.XMLHttpRequest.prototype.open = openReplacement;
     window.XMLHttpRequest.prototype.send = sendReplacement;
 }
+//*******************************************************************************************************************//
+async function npmInstall(originName) {
+    const name = originName.trim();
 
+    // 三种引入方式
+    // 如果是一个有效的URL，直接通过<script />标签插入
+    if (/^https?:\/\//.test(name)) return await injectScript(name);
+
+    // 如果指定了版本，尝试使用unpkg加载
+    if (name.indexOf('@') !== -1) return await injectScript(`https://unpkg.com/${name}`);
+
+    // 否则，尝试使用cdnjs搜索
+    const searchPromise = await fetch(
+        `https://api.cdnjs.com/libraries?search=${name}`,
+        { referrerPolicy: 'no-referrer' } // 不显示referrer的任何信息在请求头中
+    );
+    const { results, total } = await searchPromise.json();
+    if (total === 0) {
+        console.error('Sorry, ', name, ' not found, please try another keyword.');
+        return;
+    }
+    // 取结果中最相关的一条
+    const { name: exactName, latest: url } = results[0];
+    if (name !== exactName) {
+        console.log(name, ' not found, import ', exactName, ' instead.');
+    }
+    // 通过<script />标签插入
+    return await injectScript(url);
+}
+//*******************************************************************************************************************//
+// 在页面中插入<script />标签
+function injectScript(url) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = url;
+        script.onload = () => {
+            console.log(url, ' 安装成功。');
+            resolve(url);
+        };
+        script.onerror = () => {
+            console.log(url, ' 安装失败。');
+            reject(url);
+        };
+        document.body.appendChild(script);
+        // document.body.removeChild(script);
+    })
+}
