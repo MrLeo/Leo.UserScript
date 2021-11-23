@@ -1,12 +1,13 @@
 // ==UserScript==
-// @name            local
-// @namespace       http://use.i.E.your.homepage/
+// @name            发布系统应用
+// @namespace       https://platform-portal-pre.zhaopin.com/gated-center/#/config
 // @description     userscript for mr.leo
-// @match           http://*/*
+// @match           *://platform-portal-pre.zhaopin.com/*
+// @match           *://platform-portal.zhaopin.com/*
 // @require         https://code.jquery.com/jquery-3.6.0.js
 // @require         https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.15/lodash.min.js
-// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/localhost.user.js
-// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/localhost.user.js
+// @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/platform-portal.user.js
+// @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/platform-portal.user.js
 // @version         0.1
 // ==/UserScript==
 
