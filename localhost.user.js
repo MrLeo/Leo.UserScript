@@ -7,7 +7,7 @@
 // @require         https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.15/lodash.min.js
 // @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/localhost.user.js
 // @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/localhost.user.js
-// @version         1.0.1
+// @version         1.0.0
 // ==/UserScript==
 
 //*******************************************************************************************************************//
