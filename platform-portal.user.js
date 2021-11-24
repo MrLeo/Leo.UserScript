@@ -8,7 +8,7 @@
 // @require         https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.15/lodash.min.js
 // @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/platform-portal.user.js
 // @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/platform-portal.user.js
-// @version         1.0.0
+// @version         1.0.1
 // ==/UserScript==
 
 //*******************************************************************************************************************//
@@ -17,25 +17,37 @@
     typeof $ === 'undefined' && (window.$ = window.jQuery); // 在window上挂载
 
     $(function () {
-        let applying = false;
-        listenAllAjax({
-            filterUrl: '^https://fe-api-internal(-pre)?.zhaopin.com/platform-portal/gated-center/config/apply$',
-            openCallback() { },
-            sendCallback() { },
-            onReadyStateChangeCallback(...args) {
-                console.log('onReadyStateChangeCallback', args)
-                if (applying) return
-                setTimeout(() => {
-                    const btns = $('.el-tree-node.is-expanded').find('.el-button.el-button--primary.el-button--mini')
-                    console.log(`[LOG] -> 应用工件`, btns)
-                    btns.each(function (index, Element) {
-                        applying = true
-                        $(Element).click()
-                    })
-                    applying = false
-                }, 0)
-            }
-        })
+        setTimeout(() => {
+            $('div.page-domain-header > div:nth-child(2) > button')
+            .after('<i class="l-btn__txt" style="color: #ab9f9f;padding: 8px 16px;"></i>')
+            .after('<a class="l-btn" style="color: red;margin-left: 8px;cursor: pointer;padding: 8px 16px;">应用全部</a>')
+            $(document).on('click', 'a.l-btn', function () {
+                const btns = $('div.el-tree-node.is-expanded').find('button.el-button.el-button--primary.el-button--mini')
+                btns.click()
+                setTimeout(() => $('.l-btn__txt').text(`共触发 ${btns.length} 个工件应用`), 1000)
+
+            })
+        }, 1000)
+
+        // let applying = false;
+        // listenAllAjax({
+        //     filterUrl: '^https://fe-api-internal(-pre)?.zhaopin.com/platform-portal/gated-center/config/apply$',
+        //     openCallback() { },
+        //     sendCallback() { },
+        //     onReadyStateChangeCallback(...args) {
+        //         console.log('onReadyStateChangeCallback', args)
+        //         if (applying) return
+        //         setTimeout(() => {
+        //             const btns = $('.el-tree-node.is-expanded').find('.el-button.el-button--primary.el-button--mini')
+        //             console.log(`[LOG] -> 应用工件`, btns)
+        //             btns.each(function (index, Element) {
+        //                 applying = true
+        //                 $(Element).click()
+        //             })
+        //             applying = false
+        //         }, 0)
+        //     }
+        // })
     });
 })();
 //*******************************************************************************************************************//

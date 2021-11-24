@@ -7,7 +7,7 @@
 // @require         https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.15/lodash.min.js
 // @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/localhost.user.js
 // @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/localhost.user.js
-// @version         1.0.0
+// @version         1.0.1
 // ==/UserScript==
 
 //*******************************************************************************************************************//
@@ -15,14 +15,14 @@
     if (typeof jQuery == 'undefined') await npmInstall('https://code.jquery.com/jquery-3.6.0.js'); // 直接引入
     typeof $ === 'undefined' && (window.$ = window.jQuery); // 在window上挂载
 
-    listenAllAjax({
-        filterUrl: '^https://fe-api-internal(-pre)?.zhaopin.com/platform-portal/gated-center/config/apply$',
-        openCallback() { },
-        sendCallback() { },
-        onReadyStateChangeCallback(...args) {
-            console.log('onReadyStateChangeCallback', args)
-        }
-    })
+    // listenAllAjax({
+    //     filterUrl: '^https://*.-local(.dev)?.zhaopin.com$',
+    //     openCallback() { },
+    //     sendCallback() { },
+    //     onReadyStateChangeCallback(...args) {
+    //         console.log('onReadyStateChangeCallback', args)
+    //     }
+    // })
 })();
 //*******************************************************************************************************************//
 function listenAllAjax({ filterUrl = '', openCallback = () => { }, sendCallback = () => { }, onReadyStateChangeCallback = () => { } } = {}) {
