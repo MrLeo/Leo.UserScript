@@ -2,12 +2,12 @@
 // @name            #local#
 // @namespace       http://use.i.E.your.homepage/
 // @description     userscript for mr.leo
+// @version         1.0.1
 // @match           http://*/*
 // @require         https://code.jquery.com/jquery-3.6.0.js
 // @require         https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.15/lodash.min.js
 // @updateURL       https://github.com/MrLeo/Leo.UserScript/raw/master/localhost.user.js
 // @downloadURL     https://github.com/MrLeo/Leo.UserScript/raw/master/localhost.user.js
-// @version         1.0.0
 // ==/UserScript==
 
 //*******************************************************************************************************************//
