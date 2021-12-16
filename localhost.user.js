@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            local
+// @name            #local#
 // @namespace       http://use.i.E.your.homepage/
 // @description     userscript for mr.leo
 // @match           http://*/*

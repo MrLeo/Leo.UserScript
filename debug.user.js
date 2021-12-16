@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            Debug Userscript
+// @name            #Debug# Userscript
 // @namespace       https://xuebin.me
 // @version         1.0.0
 // @description     This is a debug script to load userscripts from local file system. NOTICE, you need to turn on Allow access to file URLs to @require local file https://www.tampermonkey.net/documentation.php

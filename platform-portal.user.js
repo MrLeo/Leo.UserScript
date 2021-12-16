@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            发布系统应用
+// @name            #ZPFE# 发布系统应用
 // @namespace       https://platform-portal-pre.zhaopin.com/gated-center/#/config
 // @description     userscript for mr.leo
 // @match           *://platform-portal-pre.zhaopin.com/*
